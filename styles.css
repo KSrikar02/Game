@@ -1,21 +1,37 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --orange: #F2C14E;
+    --green: #00FF6C; /* Radium Green */
     --winning-blocks: #2d414b;
+    --light-purple: rgba(128, 0, 128, 0.5); /* Light Purple with 50% opacity */
+    --lighter-bold-purple: rgba(192, 0, 192, 0.8); /* Lighter and bolder purple with 80% opacity */
 }
 
 body {
-    color: var(--orange);
+    color: var(--green);
     font-family: 'PlayPen Sans', cursive;
+    background-image: url('/images/purple\ sky.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 h1 {
     font-size: 54px;
     text-transform: uppercase;
+    font-family: 'Codystar', cursive;
+    border-bottom: 4px solid transparent; /* Set initial border color to transparent */
+    animation: drawBorder 1s forwards; /* Apply animation to drawBorder */
+}
+
+@keyframes drawBorder {
+    to {
+        border-color: var(--lighter-bold-purple); /* Set the final border color */
+    }
 }
 
 .container {
@@ -25,7 +41,8 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #37505C;
+    border: 4px solid transparent; /* Set initial border color to transparent */
+    animation: drawBorder 1s forwards; /* Apply animation to drawBorder */
 }
 
 #gameboard {
@@ -34,35 +51,41 @@ h1 {
     flex-wrap: wrap;
     margin-top: 40px;
 }
+
 .box {
     height: 100px;
     width: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--orange);
+    color: var(--green);
     font-size: 120px;
-    border-right: 2px solid;
-    border-bottom: 2px solid;
+    border: 4px solid transparent; /* Set initial border color to transparent */
+    animation: drawBorder 1s forwards; /* Apply animation to drawBorder */
 }
+
 .box:nth-child(3n) {
-    border-right: none;
+    border-right: 4px solid transparent; /* Set initial border color to transparent */
+    animation: drawBorder 1s forwards; /* Apply animation to drawBorder */
 }
 
 .box:nth-child(6) ~ .box {
-    border-bottom: none;
-} 
+    border-bottom: 4px solid transparent; /* Set initial border color to transparent */
+    animation: drawBorder 1s forwards; /* Apply animation to drawBorder */
+}
 
 button {
     padding: 10px 20px;
     border-radius: 10px;
-    background-color: var(--orange);
+    background-color: var(--green);
     color: #333;
-    border-color: var(--orange);
+    border: 4px solid transparent; /* Set initial border color to transparent */
     font-size: 18px;
     transition: 200ms transform;
     font-weight: 600;
+    animation: drawBorder 1s forwards; /* Apply animation to drawBorder */
 }
+
 button:hover {
     cursor: pointer;
     transform: translateY(-2px);
